@@ -6,24 +6,22 @@ class Fraction(object):
             if denominator == 0:
                 raise ZeroDivisionError("Denominator can't be zero")
         elif isinstance(numerator,str):
-            fraction_str = numerator.strip()
-            if '/' in fraction_str:
-                numerator_str, denominator_str = fraction.split('/')
+            stringed_fraction = numerator.strip()
+            if '/' in stringed_fraction:
+                numerator_str, denominator_str = stringed_fraction.split('/')
                 try:
                     self.numerator = int(numerator_str)
                     self.denominator = int(denominator_str)
-                # If it is not a number, the fraction will be set to 0/1.
+                # If it is not a number, raise a ValueError instead.
                 except ValueError:
-                    self.numerator = 0
-                    self.denominator = 1
+                    raise ValueError("This cannot be converted to an integer.")
+                    
             else:
                 try:
                     self.numerator = int(stringed_fraction)
                     self.denominator = 1
                 except ValueError:
-                    self.numerator = 0
-                    self.denominator = 1
-                    return
+                    raise ValueError("This cannot be converted to an integer.")
                 
     def gcd(a, b):
         #TODO
