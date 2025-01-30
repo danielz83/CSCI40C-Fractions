@@ -7,16 +7,17 @@ class Fraction(object):
                 raise ZeroDivisionError("Denominator can't be zero")
         elif isinstance(numerator,str):
             stringed_fraction = numerator.strip()
-            if '/' in stringed_fraction:
+            if len(stringed_fraction) == 2 and '/' in stringed_fraction:
                 numerator_str, denominator_str = stringed_fraction.split('/')
                 try:
                     self.numerator = int(numerator_str)
                     self.denominator = int(denominator_str)
-                # If it is not a number, raise a ValueError instead.
                 except ValueError:
-                    raise ValueError("This cannot be converted to an integer.")
+                    self.numerator = 0
+                    self.denominator = 1
             else:
-                raise ValueError("Input string is not formatted as 'numerator/denominator'")
+                self.numerator = 0
+                self.denominator = 1
                 
     def gcd(a, b):
         #TODO
