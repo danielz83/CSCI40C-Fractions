@@ -5,6 +5,15 @@ class Fraction(object):
         if isinstance(numerator,int) and isinstance(denominator,int):
             if denominator == 0:
                 raise ZeroDivisionError("Denominator can't be zero")
+        elif isinstance(numerator,str):
+            fraction_str = numerator.strip()
+            if '/' in fraction_str:
+                try:
+                    numerator_str, denominator_str = fraction.split('/')
+                except ValueError:
+                    self.numerator = 0
+                    self.denominator = 1
+            return
                 
     def gcd(a, b):
         #TODO
