@@ -2,12 +2,10 @@ class Fraction(object):
     # if denominator is none, then you want to assume that the denominator is 1
     def __init__(self, numerator=0, denominator=1):
         #TODO: denominator is none, then you want to assume that denominator is 1
-
-        if denominator is None:
-            if isinstance(numerator, int):
-                self.numerator = numerator
-                self.denominator = denominator
-
+        if isinstance(numerator,int) and isinstance(denominator,int):
+            if denominator == 0:
+                raise ZeroDivisionError("Denominator can't be zero")
+                
     def gcd(a, b):
         #TODO
         pass
