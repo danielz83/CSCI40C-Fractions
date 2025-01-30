@@ -15,13 +15,8 @@ class Fraction(object):
                 # If it is not a number, raise a ValueError instead.
                 except ValueError:
                     raise ValueError("This cannot be converted to an integer.")
-                    
             else:
-                try:
-                    self.numerator = int(stringed_fraction)
-                    self.denominator = 1
-                except ValueError:
-                    raise ValueError("This cannot be converted to an integer.")
+                raise ValueError("Input string is not formatted as 'numerator/denominator'")
                 
     def gcd(a, b):
         #TODO
