@@ -8,17 +8,7 @@ class Fraction(object):
         elif isinstance(numerator,str):
             fraction_str = numerator.strip()
             if '/' in fraction_str:
-                try:
-                    numerator_str, denominator_str = fraction.split('/')
-                except ValueError:
-                    self.numerator = 0
-                    self.denominator = 1
-                    return
-
-                # This is to convert string to integers
-                numerator_str = numerator_str.strip()
-                denominator_str = denominator_str.strip()
-                
+                numerator_str, denominator_str = fraction.split('/')
                 try:
                     self.numerator = int(numerator_str)
                     self.denominator = int(denominator_str)
@@ -26,9 +16,6 @@ class Fraction(object):
                 except ValueError:
                     self.numerator = 0
                     self.denominator = 1
-                    return
-            # If the input string does not contain /, it will be treated as 
-            # whole number and denominator will be set to 1 as a result.
             else:
                 try:
                     self.numerator = int(stringed_fraction)
