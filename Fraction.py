@@ -7,8 +7,8 @@ class Fraction(object):
                 raise ZeroDivisionError("Denominator can't be zero")
         elif isinstance(numerator,str):
             stringed_fraction = numerator.strip()
-            if len(stringed_fraction) == 2 and '/' in stringed_fraction:
-                numerator_str, denominator_str = stringed_fraction.split('/')
+            if '/' in stringed_fraction:
+                numerator_str, denominator_str = stringed_fraction.split('/',1)
                 try:
                     self.numerator = int(numerator_str)
                     self.denominator = int(denominator_str)
