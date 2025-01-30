@@ -1,7 +1,10 @@
 class Fraction(object):
-
+    # you want to get the number, input one viarbale and input another variable
+    
     def __init__(self, numerator=0, denominator=1):
         #TODO
+
+        #
         pass
 
     def gcd(a, b):
