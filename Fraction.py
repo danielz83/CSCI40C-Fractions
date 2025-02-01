@@ -1,11 +1,10 @@
 class Fraction(object):
     def __init__(self, numerator=0, denominator=1):
-        if isinstance(numerator,int) and isinstance(denominator,int):
+        if isinstance(numerator, int) and isinstance(denominator, int):
             if denominator == 0:
-                raise ZeroDivisionError("Denominator can't be zero")
-            else:
-                self.numerator = numerator
-                self.denominator = denominator
+                raise ZeroDivisionError("The denominator can't be zero")
+            self.numerator = numerator
+            self.denominator = denominator
 
         elif isinstance(numerator, str):
             fraction_str = numerator.strip()
@@ -24,13 +23,13 @@ class Fraction(object):
             self.numerator = 0
             self.denominator = 1
 
-        # ensure denominator is positive
+        # This condition is to ensure the denominator is positive
         if self.denominator < 0:
             self.denominator *= -1
             self.numerator *= -1
 
-        # set fraction to lowest terms
-        common_divisor = Fraction.gcd(self.numerator,self.denominator)
+        # This is to set fraction to lowest terms
+        common_divisor = Fraction.gcd(self.numerator, self.denominator)
         if common_divisor != 0:
             self.numerator = self.numerator // common_divisor
             self.denominator = self.denominator // common_divisor
@@ -51,5 +50,4 @@ class Fraction(object):
     def get_fraction(self):
         if self.denominator == 1:
             return str(self.numerator)
-        else:
-            return f"{self.numerator}/{self.denominator}"
+        return f"{self.numerator}/{self.denominator}"
