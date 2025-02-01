@@ -2,8 +2,6 @@ class Fraction(object):
     
     # if denominator is none, then you want to assume that the denominator is 1
     def __init__(self, numerator=0, denominator=1):
-        
-        #TODO: denominator is none, then you want to assume that denominator is 1
         if isinstance(numerator,int) and isinstance(denominator,int):
             if denominator == 0:
                 raise ZeroDivisionError("Denominator can't be zero")
@@ -24,6 +22,11 @@ class Fraction(object):
             else:
                 self.numerator = 0
                 self.denominator = 1
+
+        # set fraction to lowest terms
+        common_divisor = Fraction.gcd(self.numerator,self.denominator)
+        self.numerator = self.numerator // common_divisor
+        self.numerator = self.numerator // common_divisor
       
     def gcd(a, b):
         #TODO
