@@ -23,8 +23,9 @@ class Fraction(object):
 
         # set fraction to lowest terms
         common_divisor = Fraction.gcd(self.numerator,self.denominator)
-        self.numerator = self.numerator // common_divisor
-        self.numerator = self.numerator // common_divisor
+        if common_divisor != 0:
+            self.numerator = self.numerator // common_divisor
+            self.numerator = self.numerator // common_divisor
       
     def gcd(a, b):
         if a == 0 or b == 0:
