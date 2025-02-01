@@ -21,12 +21,16 @@ class Fraction(object):
             else:
                 self.numerator = 0
                 self.denominator = 1
+        else: 
+            self.numerator = 0
+            self.denominator = 1
 
         # set fraction to lowest terms
         common_divisor = Fraction.gcd(self.numerator,self.denominator)
         if common_divisor != 0:
             self.numerator = self.numerator // common_divisor
             self.denominator = self.denominator // common_divisor
+
       
     def gcd(a, b):
         if a == 0 or b == 0:
