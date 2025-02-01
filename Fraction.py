@@ -1,5 +1,4 @@
 class Fraction(object):
-    
     def __init__(self, numerator=0, denominator=1):
         if isinstance(numerator,int) and isinstance(denominator,int):
             if denominator == 0:
@@ -21,7 +20,7 @@ class Fraction(object):
             else:
                 self.numerator = 0
                 self.denominator = 1
-        else: 
+        else:
             self.numerator = 0
             self.denominator = 1
 
@@ -36,7 +35,6 @@ class Fraction(object):
             self.numerator = self.numerator // common_divisor
             self.denominator = self.denominator // common_divisor
 
-      
     def gcd(a, b):
         if a == 0 or b == 0:
             return 0
