@@ -10,9 +10,9 @@ class Fraction(object):
                 self.denominator = denominator
 
         elif isinstance(numerator, str):
-            stringed_fraction = numerator.strip()
-            if '/' in stringed_fraction:
-                numerator_str, denominator_str = stringed_fraction.split('/',1)
+            fraction_str = numerator.strip()
+            if '/' in fraction_str:
+                numerator_str, denominator_str = fraction_str.split('/',1)
                 try:
                     self.numerator = int(numerator_str)
                     self.denominator = int(denominator_str)
