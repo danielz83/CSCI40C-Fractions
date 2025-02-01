@@ -1,6 +1,4 @@
 class Fraction(object):
-    
-    # if denominator is none, then you want to assume that the denominator is 1
     def __init__(self, numerator=0, denominator=1):
         if isinstance(numerator,int) and isinstance(denominator,int):
             if denominator == 0:
